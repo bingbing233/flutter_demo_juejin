@@ -115,7 +115,7 @@ class _MyHeader extends StatelessWidget {
             width: 20,
           ),
           CircleAvatar(
-            backgroundImage: AssetImage("assets/avatar.jpg"),
+            backgroundImage: AssetImage("assets/dog.jpg"),
             radius: 22,
           ),
           SizedBox(

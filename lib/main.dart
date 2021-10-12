@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_juejin/pages/book.dart';
 import 'package:flutter_juejin/pages/mine.dart';
 
 void main() {
@@ -45,9 +46,14 @@ class _MyHomepageState extends State<MyHomepage> {
         items: bottomNavigationBarItem,
         onTap: (index) {
           switch (index) {
-            case 5:
+            case 3:
+              _currentBody = BookPage();
+              break;
+            case 4:
               _currentBody = const MinePage();
+              break;
           }
+          print(index);
           setState(() {
             _currentIndex = index;
           });
