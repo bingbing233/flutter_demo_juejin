@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_juejin/pages/mine.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  //状态栏设置为白色
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -26,7 +32,6 @@ class MyHomepage extends StatefulWidget {
 }
 
 class _MyHomepageState extends State<MyHomepage> {
-
   late int _currentIndex;
   late Widget _currentBody;
 
@@ -38,9 +43,10 @@ class _MyHomepageState extends State<MyHomepage> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         items: bottomNavigationBarItem,
-        onTap: (index){
-          switch(index){
-            case 5:_currentBody = const MinePage();
+        onTap: (index) {
+          switch (index) {
+            case 5:
+              _currentBody = const MinePage();
           }
           setState(() {
             _currentIndex = index;
@@ -60,8 +66,12 @@ class _MyHomepageState extends State<MyHomepage> {
   }
 
   final List<BottomNavigationBarItem> bottomNavigationBarItem = [
-    const BottomNavigationBarItem(icon: Icon(Icons.home), label: "首页",),
-    const BottomNavigationBarItem(icon: Icon(Icons.center_focus_strong), label: "沸点"),
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: "首页",
+    ),
+    const BottomNavigationBarItem(
+        icon: Icon(Icons.center_focus_strong), label: "沸点"),
     const BottomNavigationBarItem(icon: Icon(Icons.search), label: "发现"),
     const BottomNavigationBarItem(icon: Icon(Icons.book), label: "小册"),
     const BottomNavigationBarItem(icon: Icon(Icons.person), label: "我")
