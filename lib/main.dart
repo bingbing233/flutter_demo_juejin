@@ -7,7 +7,7 @@ void main() {
   //状态栏设置为白色
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -47,13 +47,12 @@ class _MyHomepageState extends State<MyHomepage> {
         onTap: (index) {
           switch (index) {
             case 3:
-              _currentBody = BookPage();
+              _currentBody = const BookPage();
               break;
             case 4:
               _currentBody = const MinePage();
               break;
           }
-          print(index);
           setState(() {
             _currentIndex = index;
           });

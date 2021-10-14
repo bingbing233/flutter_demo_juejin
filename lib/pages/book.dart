@@ -62,24 +62,47 @@ class _BookItem extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: Image.asset("assets/dog.jpg",width: 80,),
+            Container(
+              margin: const EdgeInsets.only(right: 10),
+              decoration: ShapeDecoration(shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusDirectional.circular(8),
+                ),
+                image: const DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage("assets/dog.jpg")
+                )
+              ),
+              child: const SizedBox(width: 70,height: 100,),
             ),
             SizedBox(
-              width: 250,
+              width: 230,
+              height: 100,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text("计算机是怎么运行的：从根理上解决计算机",style: TextStyle(fontSize: 20),textAlign: TextAlign.left,),
-                  Text("小孩子4919"),
-                  Text("22小节 · 1938人已购买"),
+                children: const <Widget>[
+                  Text("计算机是怎么运行的：从根理上解决计算机",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w800),textAlign: TextAlign.left,),
+                  Text.rich(TextSpan(
+                    children: [
+                      TextSpan(text: "小孩子4919 ",style:  TextStyle(fontSize: 13,fontWeight: FontWeight.w500)),
+                      TextSpan(text: "LV3",style: TextStyle(fontSize: 8,fontWeight: FontWeight.w500,color: Colors.white,backgroundColor: Colors.blue,)),
+                    ]
+                  )),
+                  Text("22小节 · 1938人已购买",style: TextStyle(fontSize: 13,color: Colors.grey),),
                 ],
               ),
+            ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: const Color.fromARGB(148, 213, 232, 243)
+              ),
+              child: const Text("￥29.9",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w600,fontSize: 12),),
             )
           ],
         ),
@@ -93,8 +116,14 @@ class _BookItem extends StatelessWidget {
 class _HaveBoughtPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("已购"),
+    return  Center(
+      child:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Icon(Icons.book_outlined,color: Colors.blue,size: 120,),
+          Text("暂无已购小册",style: TextStyle(color: Colors.grey),),
+        ],
+      )
     );
   }
 }

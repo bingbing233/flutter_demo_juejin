@@ -150,7 +150,7 @@ class _MyItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
