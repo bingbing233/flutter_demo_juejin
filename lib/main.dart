@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_juejin/pages/book.dart';
+import 'package:flutter_juejin/pages/find.dart';
 import 'package:flutter_juejin/pages/mine.dart';
 
 void main() {
@@ -46,6 +47,9 @@ class _MyHomepageState extends State<MyHomepage> {
         items: bottomNavigationBarItem,
         onTap: (index) {
           switch (index) {
+            case 2:
+              _currentBody =  const FindPage();
+              break;
             case 3:
               _currentBody = const BookPage();
               break;
