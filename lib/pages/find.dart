@@ -16,16 +16,20 @@ class _FindPageState extends State<FindPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: SearchField(),
+        title: const SearchField(),
       ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             _Banner(),
-            MyDivider(),
+            const MyDivider(),
             _Tab(),
-            MyDivider()
+            const MyDivider(),
+            _ImageTab(),
+            const MyDivider(),
+            _LogoTab(),
+            const MyDivider()
           ],
         ),
       ),
@@ -81,4 +85,86 @@ class _Tab extends StatelessWidget {
     );
   }
 
+}
+
+class _ImageTab extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Image.asset("assets/1.jpg",height: 80,width: 180,),
+        Image.asset("assets/2.jpg",height: 80,width: 180,)
+      ],
+    );
+  }
+
+}
+
+class _LogoTab extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text("推荐技术团队"),
+              Text("全部技术团队>",style:TextStyle(color: Colors.blue) ,)
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection:Axis.horizontal ,
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset("assets/girl.png",height: 100,width: 100,fit:BoxFit.fill ,),
+                ),
+                const SizedBox(width: 10,),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset("assets/girl.png",height: 100,width: 100,fit:BoxFit.fill ,),
+                ),
+                const SizedBox(width: 10,),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset("assets/girl.png",height: 100,width: 100,fit:BoxFit.fill ,),
+                ),
+                const SizedBox(width: 10,),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset("assets/girl.png",height: 100,width: 100,fit:BoxFit.fill ,),
+                ),
+                const SizedBox(width: 10,),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset("assets/girl.png",height: 100,width: 100,fit:BoxFit.fill ,),
+                ),
+                const SizedBox(width: 10,),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset("assets/girl.png",height: 100,width: 100,fit:BoxFit.fill ,),
+                ),
+                const SizedBox(width: 10,),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class _Item extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+  
 }

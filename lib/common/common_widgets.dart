@@ -25,9 +25,9 @@ class MyDivider extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Divider(
+    return const Divider(
       thickness: 8,
-      color: Colors.black12,
+      color: Color.fromARGB(192, 222, 224, 224),
     );
   }
 
